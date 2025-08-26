@@ -1,0 +1,26 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Telethon session files
+*.session
+*.session-journal
+
+# IDE settings
+.vscode/
+.idea/
+
+# Service configs
+service-1/config/bots.json
+
+# OS files
+.DS_Store
+Thumbs.db
