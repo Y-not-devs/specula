@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specula — Telegram Opinion Analyzer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-10">
+        <nav class="mx-auto flex justify-between items-center px-16 py-8 z-20">
+            <a href="#hero" class="text-5xl font-extrabold text-indigo-400 tracking-tight">Specula</a>
+            <div class="flex space-x-8">
+                <a href="#features" class="text-white hover:text-indigo-400 font-semibold transition">Features</a>
+                <a href="#workflow" class="text-white hover:text-indigo-400 font-semibold transition">Workflow</a>
+                <a href="#audience" class="text-white hover:text-indigo-400 font-semibold transition">Audience</a>
+                <a href="#tech" class="text-white hover:text-indigo-400 font-semibold transition">Tech Stack</a>
+                <a href="#contact" class="text-white hover:text-indigo-400 font-semibold transition">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section flex items-center justify-center text-center text-white">
+        <video autoplay loop muted alt="Analytics dashboard" class="hero-img-bg -z-1">
+            <source src="media/meeting.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="relative z-1 flex flex-col items-center justify-center w-full py-20 px-8">
+            <h1 class="text-6xl font-extrabold text-indigo-300 mb-4 drop-shadow-lg">
+                One tool to monitor trends around you 
+            </h1>
+            <p class="text-xl text-gray-100 mb-6 rounded-xl px-6 py-4">
+                Collect, analyze, and visualize public opinion from Telegram channels - automatically.
+            </p>
+            <a href="#features" class="inline-block px-8 py-3 bg-indigo-600 text-white rounded-full shadow hover:bg-indigo-700 transition font-semibold">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="max-w-[96rem] mx-auto mt-20 px-8 pt-32">
+        <h3 class="text-3xl font-bold text-center text-indigo-300 mb-10">Key Features</h3>
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+            <div class="bg-[#232323] rounded-2xl shadow-lg p-6 flex flex-col items-center">
+                <span class="material-symbols-outlined text-white text-6xl w-12 h-12 mb-4 flex items-center justify-center brightness-60">chat</span>
+                <span class="font-bold text-lg mb-2 text-indigo-300 text-center">Message Collection</span>
+                <p class="text-gray-200 text-center">Automated data gathering from Telegram.</p>
+            </div>
+            <div class="bg-[#232323] rounded-2xl shadow-lg p-6 flex flex-col items-center">
+                <span class="material-symbols-outlined text-white text-6xl w-12 h-12 mb-4 flex items-center justify-center brightness-60">analytics</span>
+                <span class="font-bold text-lg mb-2 text-indigo-300 text-center">Analytics</span>
+                <p class="text-gray-200 text-center">Topics, discussion dynamics, API integration.</p>
+            </div>
+            <div class="bg-[#232323] rounded-2xl shadow-lg p-6 flex flex-col items-center">
+                <span class="material-symbols-outlined text-white text-6xl w-12 h-12 mb-4 flex items-center justify-center brightness-60">bid_landscape</span>
+                <span class="font-bold text-lg mb-2 text-indigo-300 text-center">Visualization</span>
+                <p class="text-gray-200 text-center">Showcase results on a landing page.</p>
+            </div>
+            <div class="bg-[#232323] rounded-2xl shadow-lg p-6 flex flex-col items-center">
+                <span class="material-symbols-outlined text-white text-6xl w-12 h-12 mb-4 flex items-center justify-center brightness-60">integration_instructions</span>
+                <span class="font-bold text-lg mb-2 text-indigo-300 text-center">Integration</span>
+                <p class="text-gray-200 text-center">JSON responses for other systems.</p>
+            </div>
+            <div class="bg-[#232323] rounded-2xl shadow-lg p-6 flex flex-col items-center">
+                <span class="material-symbols-outlined text-white text-6xl w-12 h-12 mb-4 flex items-center justify-center brightness-60">web</span>
+                <span class="font-bold text-lg mb-2 text-indigo-300 text-center">Demonstration</span>
+                <p class="text-gray-200 text-center">Results of the analysis on the webpage</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Timeline -->
+    <section id="workflow" class="max-w-8xl mx-auto mt-20 px-8 pt-32">
+        <h3 class="text-3xl font-bold text-center text-indigo-300 mb-10">How It Works</h3>
+        <div class="flex flex-col items-center">
+            <div class="relative w-full max-w-[100rem] mx-auto flex items-center justify-between">
+                <!-- Line -->
+                <div class="absolute top-6 left-0 right-0 h-1 bg-indigo-700 rounded-full" style="z-index:0;"></div>
+                <!-- Steps -->
+                <div class="relative flex w-full justify-between items-center z-10">
+                    <div class="flex flex-col items-center w-1/5">
+                        <div class="bg-indigo-400 border-4 border-indigo-300 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold text-lg shadow-lg">1</div>
+                        <span class="mt-4 text-gray-100 font-semibold text-center">Data Collection</span>
+                    </div>
+                    <div class="flex flex-col items-center w-1/5">
+                        <div class="bg-indigo-400 border-4 border-indigo-300 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold text-lg shadow-lg">2</div>
+                        <span class="mt-4 text-gray-100 font-semibold text-center">Storage</span>
+                    </div>
+                    <div class="flex flex-col items-center w-1/5">
+                        <div class="bg-indigo-400 border-4 border-indigo-300 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold text-lg shadow-lg">3</div>
+                        <span class="mt-4 text-gray-100 font-semibold text-center">Parsing</span>
+                    </div>
+                    <div class="flex flex-col items-center w-1/5">
+                        <div class="bg-indigo-400 border-4 border-indigo-300 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold text-lg shadow-lg">4</div>
+                        <span class="mt-4 text-gray-100 font-semibold text-center">Analytics</span>
+                    </div>
+                    <div class="flex flex-col items-center w-1/5">
+                        <div class="bg-indigo-400 border-4 border-indigo-300 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold text-lg shadow-lg">5</div>
+                        <span class="mt-4 text-gray-100 font-semibold text-center">Visualization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Merged Audience, Mission, and Tech Stack Section -->
+    <section class="max-w-7xl mx-auto mt-20 flex flex-col md:flex-row gap-8 pt-16">
+        <!-- Target Audience -->
+        <div class="bg-[#232323] rounded-2xl shadow-lg p-8 flex-1 flex flex-col items-center justify-start">
+            <h3 class="text-2xl font-bold mb-4 text-white">Target Audience</h3>
+            <ul class="flex flex-col justify-between w-full">
+                <li class="flex flex-row items-center">
+                    <span class="material-symbols-outlined text-white flex justify-center items-center mx-1 h-16 w-16 text-4xl">business_center</span>
+                    <span class="bg-indigo-900 text-indigo-200 px-3 py-1 rounded-full font-semibold items-center">Business</span>
+                </li>
+                <li class="flex flex-row items-center">
+                    <span class="material-symbols-outlined text-white flex justify-center items-center mx-1 h-16 w-16 text-4xl">newsmode</span>
+                    <span class="bg-indigo-900 text-indigo-200 px-3 py-1 rounded-full font-semibold items-center">Media & Agencies</span>
+                </li>
+                <li class="flex flex-row items-center">
+                    <span class="material-symbols-outlined text-white flex justify-center items-center mx-1 h-16 w-16 text-4xl">account_balance</span>
+                    <span class="bg-indigo-900 text-indigo-200 px-3 py-1 rounded-full font-semibold items-center">Government</span>
+                </li>
+                <li class="flex flex-row items-center">
+                    <span class="material-symbols-outlined text-white flex justify-center items-center mx-1 h-16 w-16 text-4xl">search_insights</span>
+                    <span class="bg-indigo-900 text-indigo-200 px-3 py-1 rounded-full font-semibold items-center">Researchers & NGOs</span>
+                </li>
+            </ul>
+        </div>
+        <!-- Mission -->
+        <div class="bg-[#232323] rounded-2xl shadow-lg p-8 flex-1 flex flex-col items-center justify-start">
+            <h3 class="text-2xl font-bold mb-4 text-white">Mission</h3>
+            <p class="text-gray-100 text-lg text-center mb-4">Make Telegram information accessible and clear:</p>
+            <p class="font-semibold text-lg text-white">from <span class="text-indigo-500">messages</span></p>
+            <span class="material-symbols-outlined font-semibold text-lg text-indigo-400">arrow_downward</span>
+            <p class="font-semibold text-lg text-white">to <span class="text-indigo-500">insights</span></p>
+            <span class="material-symbols-outlined font-semibold text-lg text-indigo-400">arrow_downward</span>
+            <p class="font-semibold text-lg text-white">to <span class="text-indigo-500">decisions.</span></p>
+        </div>
+        <!-- Tech Stack -->
+        <div class="bg-[#232323] rounded-2xl shadow-lg p-8 flex-1 flex flex-col items-center justify-start">
+            <h3 class="text-2xl font-bold mb-4 text-white">Tech Stack</h3>
+            <div class="flex flex-wrap justify-center gap-2 pt-16">
+                <span class="bg-indigo-900 px-3 py-1 rounded-full font-mono text-indigo-200 shadow transition duration-200 hover:bg-indigo-700 hover:text-white hover:scale-105 cursor-pointer">Telethon</span>
+                <span class="bg-indigo-900 px-3 py-1 rounded-full font-mono text-indigo-200 shadow transition duration-200 hover:bg-indigo-700 hover:text-white hover:scale-105 cursor-pointer">Firebase</span>
+                <span class="bg-indigo-900 px-3 py-1 rounded-full font-mono text-indigo-200 shadow transition duration-200 hover:bg-indigo-700 hover:text-white hover:scale-105 cursor-pointer">Python (NLP)</span>
+                <span class="bg-indigo-900 px-3 py-1 rounded-full font-mono text-indigo-200 shadow transition duration-200 hover:bg-indigo-700 hover:text-white hover:scale-105 cursor-pointer">OpenAI/Claude API</span>
+                <span class="bg-indigo-900 px-3 py-1 rounded-full font-mono text-indigo-200 shadow transition duration-200 hover:bg-indigo-700 hover:text-white hover:scale-105 cursor-pointer">Web Landing</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- License & Contact -->
+    <footer id="contact" class="max-w-7xl mt-20 pt-10 pb-8 text-center text-gray-400 text-sm bg-[#232323] rounded-t-3xl mx-auto">
+        <p>This project is distributed under a closed license.<br>
+        Any copying, modification, distribution, or commercial use of the code is prohibited without written permission from the owner.</p>
+        <p class="mt-4">Contact: <a href="mailto:bakirullit@gmail.com" class="text-indigo-300 underline">bakirullit@gmail.com</a> | <a href="https://t.me/ALG0RITHMs" class="text-indigo-300 underline">@ALG0RITHMs</a></p>
+        <p class="mt-4">&copy; 2025 Specula Team. All rights reserved.</p>
+    </footer>
+</body>
+</html>
