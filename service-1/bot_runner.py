@@ -1,6 +1,7 @@
 import asyncio
 import threading
 from telethon import TelegramClient, events
+from storage.firebase import FirebaseStorage
 from pathlib import Path
 
 class BotRunner:
@@ -9,6 +10,7 @@ class BotRunner:
         self.api_id = api_id
         self.api_hash = api_hash
         sessions_dir = Path("config/sessions")
+        self.firebase = FirebaseStorage()
         sessions_dir.mkdir(parents=True, exist_ok=True)
 
         self.session_path = str(sessions_dir / f"{session_name}.session")
@@ -29,6 +31,14 @@ class BotRunner:
         sender_id = sender.id if sender else None
         text = event.raw_text  # always safe
         print(f"[{self.name}] {sender_id}: {text}")
+        if not (event.is_group or event.is_channel):
+            return  # только группы и каналы
+
+        data = {
+            "user_id": event.sender_id,
+            "text": event.raw_text or "[Media]"
+        }
+        await self.firebase.save_message(event.chat_id, data)
 
     async def send_message(self, user_id, text):
         print(f"[{self.name}] Attempting to send to {user_id}: {text}")
