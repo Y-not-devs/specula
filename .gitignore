@@ -24,3 +24,4 @@ service-1/config/bots.json
 # OS files
 .DS_Store
 Thumbs.db
+service-2/.env
