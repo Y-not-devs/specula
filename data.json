@@ -1,0 +1,38 @@
+{
+  "report_title": "Sentiment Trend: 'SpaceX Starship Launch'",
+  "report_date": "2025-08-31",
+  "source_channel": "Space_Enthusiasts_Hub",
+  "visualization_type": "line_chart",
+  "data": [
+    {
+      "date": "2025-08-27",
+      "positive_sentiment": 55,
+      "negative_sentiment": 15,
+      "neutral_sentiment": 30
+    },
+    {
+      "date": "2025-08-28",
+      "positive_sentiment": 65,
+      "negative_sentiment": 10,
+      "neutral_sentiment": 25
+    },
+    {
+      "date": "2025-08-29",
+      "positive_sentiment": 72,
+      "negative_sentiment": 8,
+      "neutral_sentiment": 20
+    },
+    {
+      "date": "2025-08-30",
+      "positive_sentiment": 60,
+      "negative_sentiment": 12,
+      "neutral_sentiment": 28
+    },
+    {
+      "date": "2025-08-31",
+      "positive_sentiment": 58,
+      "negative_sentiment": 18,
+      "neutral_sentiment": 24
+    }
+  ]
+}

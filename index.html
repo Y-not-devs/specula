@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specula — Telegram Opinion Analyzer | Analytics Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-950 font-sans text-white antialiased min-h-screen overflow-x-hidden">
+    
+    <!-- Dashboard Layout Container -->
+    <div class="flex h-screen bg-gray-950">
+        
+        <!-- Sidebar Navigation -->
+        <div class="w-64 sidebar-gradient border-r border-gray-800 flex flex-col">
+            <!-- Logo Section -->
+            <div class="p-6 border-b border-gray-800">
+                <div class="flex items-center space-x-3">
+                    <div>
+                        <h1 class="text-3xl font-bold text-white">Specula</h1>
+                        <p class="text-base text-gray-400">Opinion Analyzer</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="flex-1 px-4 py-6 space-y-2">
+                <a href="#dashboard" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-lg sidebar-active text-emerald-400" data-section="dashboard">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h4a2 2 0 012 2v6a2 2 0 01-2 2H10a2 2 0 01-2-2V5z"/>
+                    </svg>
+                    <span class="font-medium">Dashboard</span>
+                </a>
+
+                <div class="px-4 py-2">
+                    <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Analytics</h3>
+                </div>
+
+                <a href="#business" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-800/50 hover:text-white transition-all duration-200" data-section="business">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    </svg>
+                    <span>Business Intelligence</span>
+                </a>
+
+                <a href="#media" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-800/50 hover:text-white transition-all duration-200" data-section="media">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                    </svg>
+                    <span>Media Analytics</span>
+                </a>
+
+                <a href="#research" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-800/50 hover:text-white transition-all duration-200" data-section="research">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                    </svg>
+                    <span>Research Hub</span>
+                </a>
+
+                <a href="#government" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-800/50 hover:text-white transition-all duration-200" data-section="government">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                    </svg>
+                    <span>Government Insights</span>
+                </a>
+
+                <div class="px-4 py-2 mt-6">
+                    <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Tools</h3>
+                </div>
+
+                <a href="#settings" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-800/50 hover:text-white transition-all duration-200" data-section="settings">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    <span>Settings</span>
+                </a>
+
+                <a href="#export" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-800/50 hover:text-white transition-all duration-200" data-section="export">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <span>Export Data</span>
+                </a>
+            </nav>
+
+            <!-- Status Indicator -->
+            <div class="p-4 border-t border-gray-800">
+                <div class="flex items-center space-x-3 p-3 bg-green-900/20 rounded-lg border border-green-500/30">
+                    <div class="w-2 h-2 bg-green-400 rounded-full pulse-dot"></div>
+                    <div class="text-sm">
+                        <div class="text-green-300 font-medium">✅ System Active</div>
+                        <div class="text-green-400/70 text-xs">Monitoring 127 channels live</div>
+                        <div class="text-green-400/50 text-xs mt-1">Updated every 5 minutes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            
+            <!-- Top Header Bar -->
+            <header class="bg-gray-900/50 backdrop-blur-sm border-b border-gray-800 px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold text-white">Analytics Dashboard</h2>
+                        <p class="text-gray-400 text-sm">Real-time analysis of what people are saying on Telegram</p>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <!-- Field & Topic Selectors -->
+                        <div class="flex items-center space-x-3">
+                            <div class="text-right">
+                                <p class="text-xs text-gray-400 mb-1">Step 1: Choose your industry</p>
+                                <select id="fieldSelector" class="px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white text-sm focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
+                                    <option value="">What field are you in?</option>
+                                    <option value="business">💼 Business & Companies</option>
+                                    <option value="media">📺 Media & News</option>
+                                    <option value="research">🔬 Research & Studies</option>
+                                    <option value="government">🏛️ Government & Politics</option>
+                                </select>
+                            </div>
+                            
+                            <div class="text-right">
+                                <p class="text-xs text-gray-400 mb-1">Step 2: Pick a topic</p>
+                                <select id="topicSelector" class="px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white text-sm focus:ring-2 focus:ring-cyan-500 focus:border-transparent">
+                                    <option value="">What topic interests you?</option>
+                                    <option value="technology">💻 Technology & Innovation</option>
+                                    <option value="healthcare">🏥 Healthcare & Medicine</option>
+                                    <option value="environment">🌍 Environment & Climate</option>
+                                    <option value="education">📚 Education & Learning</option>
+                                </select>
+                            </div>
+                            
+                            <div class="text-right">
+                                <p class="text-xs text-gray-400 mb-1">Step 3: Get insights</p>
+                                <button id="generateInsights" class="px-6 py-2 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white font-semibold rounded-lg transition-all duration-200 disabled:opacity-50 text-sm" disabled>
+                                    Show Me Results! 🚀
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Live Status -->
+                        <div class="flex items-center space-x-3 px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                            <div class="w-2 h-2 bg-green-400 rounded-full pulse-dot"></div>
+                            <span class="text-green-300 text-sm font-medium">Live</span>
+                            <span class="text-gray-400 text-sm">15.2K msg/h</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Dashboard Content -->
+            <main class="flex-1 overflow-auto p-6">
+                
+                <!-- Dashboard Section -->
+                <div id="dashboard-section" class="section active">
+                    <!-- Key Metrics Overview -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                        <div class="stat-card rounded-xl p-6 transition-all duration-200 hover:scale-105" title="This shows how many messages we've collected from Telegram today">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-gray-400 text-sm font-medium">💬 Messages Collected Today</p>
+                                    <p class="text-3xl font-bold text-white mt-1">127.5K</p>
+                                    <p class="text-emerald-400 text-sm mt-1">📈 12.5% more than yesterday</p>
+                                </div>
+                                <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card rounded-xl p-6 transition-all duration-200 hover:scale-105" title="This is how many different Telegram channels and groups we're monitoring">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-gray-400 text-sm font-medium">📱 Channels We Monitor</p>
+                                    <p class="text-3xl font-bold text-white mt-1">127</p>
+                                    <p class="text-cyan-400 text-sm mt-1">✨ 3 new channels added</p>
+                                </div>
+                                <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2M7 4h10M7 4l-2 16h14l-2-16"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card rounded-xl p-6 transition-all duration-200 hover:scale-105" title="This shows the overall mood of people's messages - higher is better">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-gray-400 text-sm font-medium">😊 Overall Mood Score</p>
+                                    <p class="text-3xl font-bold text-white mt-1">72%</p>
+                                    <p class="text-emerald-400 text-sm mt-1">📊 People are feeling positive</p>
+                                </div>
+                                <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.01M15 10h1.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card rounded-xl p-6 transition-all duration-200 hover:scale-105" title="This shows how much people interact with posts (likes, shares, comments)">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-gray-400 text-sm font-medium">🔥 How Active People Are</p>
+                                    <p class="text-3xl font-bold text-white mt-1">8.4%</p>
+                                    <p class="text-cyan-400 text-sm mt-1">🎯 Higher than average</p>
+                                </div>
+                                <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Section -->
+                    <div id="insightsContainer" class="hidden space-y-8 slide-in">
+                        <!-- Main Analysis Chart -->
+                        <div class="chart-container rounded-xl p-8">
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 id="mainChartTitle" class="text-2xl font-bold text-white"></h3>
+                                <div class="flex items-center space-x-2 text-sm text-gray-400">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                                        <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span>Real-time analysis</span>
+                                </div>
+                            </div>
+                            <div class="relative h-96">
+                                <canvas id="mainChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Key Metrics Grid -->
+                        <div id="keyMetrics" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <!-- Metrics will be populated dynamically -->
+                        </div>
+
+                        <!-- Secondary Analysis -->
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="chart-container rounded-xl p-8">
+                                <div class="flex items-center justify-between mb-6">
+                                    <h4 id="secondaryChartTitle" class="text-xl font-bold text-white"></h4>
+                                    <div class="text-sm text-gray-400">📈 Detailed breakdown</div>
+                                </div>
+                                <div class="relative h-64">
+                                    <canvas id="secondaryChart"></canvas>
+                                </div>
+                            </div>
+                            
+                            <div class="chart-container rounded-xl p-8">
+                                <div class="flex items-center justify-between mb-6">
+                                    <h4 class="text-xl font-bold text-white">🧠 AI Insights</h4>
+                                    <div class="text-sm text-gray-400">Powered by NLP</div>
+                                </div>
+                                <div id="insightsList" class="space-y-4 max-h-64 overflow-y-auto">
+                                    <!-- Insights will be populated dynamically -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Default Charts Dashboard -->
+                    <div id="defaultCharts" class="space-y-8">
+                        <!-- Demo Notice -->
+                        <div class="bg-gradient-to-r from-amber-900/30 to-orange-900/30 rounded-xl p-6 border border-amber-500/30">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-amber-200 mb-1">✨ Sample Dashboard Preview</h3>
+                                    <p class="text-amber-100 text-sm">
+                                        Pick a field and topic above to see personalized insights. Below are examples of what our system can show you.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sample Charts Grid -->
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="chart-container rounded-xl p-6">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-lg font-bold text-white">� How People Feel About Brands</h3>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                </div>
+                                <p class="text-sm text-gray-400 mb-4">Shows positive, neutral, and negative comments for different companies</p>
+                                <div class="relative h-64">
+                                    <canvas id="businessChart"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="chart-container rounded-xl p-6">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-lg font-bold text-white">🔥 What's Trending Right Now</h3>
+                                    <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
+                                </div>
+                                <p class="text-sm text-gray-400 mb-4">Popular topics and how much people are talking about them</p>
+                                <div class="relative h-64">
+                                    <canvas id="mediaChart"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="chart-container rounded-xl p-6">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-lg font-bold text-white">� What People Are Discussing</h3>
+                                    <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
+                                </div>
+                                <p class="text-sm text-gray-400 mb-4">Popular conversation topics and their importance</p>
+                                <div class="relative h-64">
+                                    <canvas id="researcherChart"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="chart-container rounded-xl p-6">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-lg font-bold text-white">🏛 Public Opinion on Policies</h3>
+                                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                                </div>
+                                <p class="text-sm text-gray-400 mb-4">How satisfied people are with government decisions</p>
+                                <div class="relative h-64">
+                                    <canvas id="governmentChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Help Section -->
+                        <div class="mt-12 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-xl p-6 border border-blue-500/20">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-blue-200 mb-2">🤔 How to Use This Dashboard</h3>
+                                    <div class="text-blue-100 text-sm space-y-2">
+                                        <p>• <strong>Hover over charts</strong> to see detailed information</p>
+                                        <p>• <strong>Green colors</strong> usually mean positive/good things</p>
+                                        <p>• <strong>Red colors</strong> usually mean negative/concerning things</p>
+                                        <p>• <strong>Bigger numbers</strong> in charts mean more people are talking about that topic</p>
+                                        <p>• <strong>Use the dropdowns above</strong> to get specific insights for your industry</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other sections (initially hidden) -->
+                <div id="business-section" class="section hidden">
+                    <div class="text-center py-20">
+                        <h2 class="text-3xl font-bold text-white mb-4">Business Intelligence</h2>
+                        <p class="text-gray-400">Comprehensive business analytics and insights coming soon...</p>
+                    </div>
+                </div>
+
+                <div id="media-section" class="section hidden">
+                    <div class="text-center py-20">
+                        <h2 class="text-3xl font-bold text-white mb-4">Media Analytics</h2>
+                        <p class="text-gray-400">Media monitoring and content analysis tools coming soon...</p>
+                    </div>
+                </div>
+
+                <div id="research-section" class="section hidden">
+                    <div class="text-center py-20">
+                        <h2 class="text-3xl font-bold text-white mb-4">Research Hub</h2>
+                        <p class="text-gray-400">Advanced research tools and data analysis coming soon...</p>
+                    </div>
+                </div>
+
+                <div id="government-section" class="section hidden">
+                    <div class="text-center py-20">
+                        <h2 class="text-3xl font-bold text-white mb-4">Government Insights</h2>
+                        <p class="text-gray-400">Public policy analysis and citizen feedback coming soon...</p>
+                    </div>
+                </div>
+
+                <div id="settings-section" class="section hidden">
+                    <div class="text-center py-20">
+                        <h2 class="text-3xl font-bold text-white mb-4">Settings</h2>
+                        <p class="text-gray-400">Configuration and preferences panel coming soon...</p>
+                    </div>
+                </div>
+
+                <div id="export-section" class="section hidden">
+                    <div class="text-center py-20">
+                        <h2 class="text-3xl font-bold text-white mb-4">Export Data</h2>
+                        <p class="text-gray-400">Data export and API access tools coming soon...</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItems = document.querySelectorAll('.nav-item');
+            const sections = document.querySelectorAll('.section');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const sectionName = this.getAttribute('data-section');
+                    
+                    // Remove active class from all nav items
+                    navItems.forEach(nav => {
+                        nav.classList.remove('sidebar-active', 'text-emerald-400');
+                        nav.classList.add('text-gray-300');
+                    });
+                    
+                    // Add active class to clicked item
+                    this.classList.add('sidebar-active', 'text-emerald-400');
+                    this.classList.remove('text-gray-300');
+                    
+                    // Hide all sections
+                    sections.forEach(section => {
+                        section.classList.add('hidden');
+                        section.classList.remove('active');
+                    });
+                    
+                    // Show target section
+                    const targetSection = document.getElementById(sectionName + '-section');
+                    if (targetSection) {
+                        targetSection.classList.remove('hidden');
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

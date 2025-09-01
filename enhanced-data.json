@@ -1,0 +1,239 @@
+{
+  "topics": {
+    "technology": {
+      "name": "Technology & Innovation",
+      "business_insights": {
+        "market_share": [
+          {"company": "Tech Corp A", "share": 35, "growth": 5.2},
+          {"company": "Tech Corp B", "share": 28, "growth": -1.8},
+          {"company": "Our Company", "share": 18, "growth": 8.5},
+          {"company": "Others", "share": 19, "growth": 2.1}
+        ],
+        "customer_satisfaction": 78,
+        "revenue_impact": 15.4,
+        "competitive_advantage": "AI Integration",
+        "risks": ["Market saturation", "Regulatory changes"],
+        "brand_mentions": 12500,
+        "sentiment_score": 72,
+        "competitor_weakness": "Poor customer support",
+        "growth_opportunity": "Enterprise AI solutions"
+      },
+      "media_insights": {
+        "viral_potential": 8.2,
+        "peak_engagement_time": "14:00-16:00",
+        "audience_demographics": {
+          "18-24": 25, "25-34": 35, "35-44": 25, "45+": 15
+        },
+        "content_performance": {
+          "video": 85, "image": 72, "text": 58, "poll": 91
+        },
+        "trending_keywords": ["AI", "innovation", "future", "disruption"],
+        "influencer_reach": 2500000,
+        "engagement_growth": 45,
+        "share_rate": 23,
+        "breaking_news_potential": "High",
+        "audience_sentiment": "Optimistic"
+      },
+      "research_insights": {
+        "adoption_rate": 42.3,
+        "geographic_distribution": {
+          "North America": 35, "Europe": 28, "Asia": 25, "Others": 12
+        },
+        "correlation_factors": [
+          {"factor": "Education Level", "correlation": 0.78},
+          {"factor": "Income", "correlation": 0.65},
+          {"factor": "Age", "correlation": -0.42}
+        ],
+        "statistical_significance": 0.001,
+        "sample_size": 15420,
+        "confidence_interval": "95%",
+        "demographic_insights": {
+          "early_adopters": "25-34 urban professionals",
+          "resistance_groups": "45+ rural populations",
+          "key_barriers": "Privacy concerns, complexity"
+        }
+      },
+      "government_insights": {
+        "public_support": 72,
+        "policy_impact": "Positive",
+        "economic_effect": {
+          "job_creation": 12500,
+          "tax_revenue": 890000000,
+          "gdp_contribution": 2.3
+        },
+        "regional_differences": {
+          "Urban": 78, "Suburban": 68, "Rural": 52
+        },
+        "priority_level": "High",
+        "policy_recommendations": [
+          "Increase R&D tax incentives",
+          "Establish AI ethics framework",
+          "Fund digital literacy programs"
+        ],
+        "public_concerns": ["Job displacement", "Privacy", "Security"]
+      }
+    },
+    "healthcare": {
+      "name": "Healthcare & Wellness",
+      "business_insights": {
+        "market_share": [
+          {"company": "HealthTech A", "share": 42, "growth": 3.1},
+          {"company": "MedCorp B", "share": 25, "growth": 7.2},
+          {"company": "Our Company", "share": 15, "growth": 12.8},
+          {"company": "Others", "share": 18, "growth": -2.5}
+        ],
+        "customer_satisfaction": 85,
+        "revenue_impact": 22.7,
+        "competitive_advantage": "Telemedicine Platform",
+        "risks": ["Regulatory compliance", "Data privacy"]
+      },
+      "media_insights": {
+        "viral_potential": 6.8,
+        "peak_engagement_time": "08:00-10:00",
+        "audience_demographics": {
+          "18-24": 15, "25-34": 20, "35-44": 30, "45+": 35
+        },
+        "content_performance": {
+          "video": 78, "image": 65, "text": 71, "infographic": 88
+        },
+        "trending_keywords": ["wellness", "prevention", "mental health", "accessibility"],
+        "influencer_reach": 1800000
+      },
+      "research_insights": {
+        "adoption_rate": 68.5,
+        "geographic_distribution": {
+          "North America": 40, "Europe": 32, "Asia": 20, "Others": 8
+        },
+        "correlation_factors": [
+          {"factor": "Age", "correlation": 0.72},
+          {"factor": "Insurance Coverage", "correlation": 0.81},
+          {"factor": "Urban Access", "correlation": 0.58}
+        ],
+        "statistical_significance": 0.0001,
+        "sample_size": 23750,
+        "confidence_interval": "99%"
+      },
+      "government_insights": {
+        "public_support": 88,
+        "policy_impact": "Very Positive",
+        "economic_effect": {
+          "cost_savings": 1200000000,
+          "job_creation": 8900,
+          "healthcare_access_improvement": 34
+        },
+        "regional_differences": {
+          "Urban": 92, "Suburban": 85, "Rural": 75
+        },
+        "priority_level": "Critical"
+      }
+    },
+    "environment": {
+      "name": "Environment & Sustainability",
+      "business_insights": {
+        "market_share": [
+          {"company": "GreenTech A", "share": 38, "growth": 15.2},
+          {"company": "EcoSolutions B", "share": 24, "growth": 8.7},
+          {"company": "Our Company", "share": 22, "growth": 18.5},
+          {"company": "Others", "share": 16, "growth": 5.3}
+        ],
+        "customer_satisfaction": 82,
+        "revenue_impact": 28.9,
+        "competitive_advantage": "Carbon Neutral Operations",
+        "risks": ["Supply chain sustainability", "Green regulation compliance"]
+      },
+      "media_insights": {
+        "viral_potential": 9.1,
+        "peak_engagement_time": "12:00-14:00",
+        "audience_demographics": {
+          "18-24": 35, "25-34": 32, "35-44": 22, "45+": 11
+        },
+        "content_performance": {
+          "video": 92, "image": 88, "text": 65, "story": 94
+        },
+        "trending_keywords": ["climate", "sustainability", "green", "future"],
+        "influencer_reach": 3200000
+      },
+      "research_insights": {
+        "adoption_rate": 56.7,
+        "geographic_distribution": {
+          "North America": 32, "Europe": 45, "Asia": 18, "Others": 5
+        },
+        "correlation_factors": [
+          {"factor": "Education Level", "correlation": 0.85},
+          {"factor": "Environmental Awareness", "correlation": 0.92},
+          {"factor": "Income", "correlation": 0.51}
+        ],
+        "statistical_significance": 0.0001,
+        "sample_size": 18960,
+        "confidence_interval": "95%"
+      },
+      "government_insights": {
+        "public_support": 79,
+        "policy_impact": "Positive",
+        "economic_effect": {
+          "job_creation": 15600,
+          "emissions_reduction": 18.5,
+          "energy_savings": 2100000000
+        },
+        "regional_differences": {
+          "Urban": 85, "Suburban": 78, "Rural": 65
+        },
+        "priority_level": "High"
+      }
+    },
+    "education": {
+      "name": "Education & Learning",
+      "business_insights": {
+        "market_share": [
+          {"company": "EduTech A", "share": 45, "growth": 6.8},
+          {"company": "Learning Corp B", "share": 28, "growth": 4.2},
+          {"company": "Our Company", "share": 12, "growth": 22.5},
+          {"company": "Others", "share": 15, "growth": 1.8}
+        ],
+        "customer_satisfaction": 76,
+        "revenue_impact": 19.3,
+        "competitive_advantage": "Adaptive Learning AI",
+        "risks": ["Digital divide", "Content quality control"]
+      },
+      "media_insights": {
+        "viral_potential": 5.9,
+        "peak_engagement_time": "19:00-21:00",
+        "audience_demographics": {
+          "18-24": 40, "25-34": 25, "35-44": 25, "45+": 10
+        },
+        "content_performance": {
+          "video": 85, "image": 62, "text": 78, "interactive": 91
+        },
+        "trending_keywords": ["online learning", "skills", "certification", "remote"],
+        "influencer_reach": 1650000
+      },
+      "research_insights": {
+        "adoption_rate": 71.2,
+        "geographic_distribution": {
+          "North America": 38, "Europe": 35, "Asia": 22, "Others": 5
+        },
+        "correlation_factors": [
+          {"factor": "Internet Access", "correlation": 0.89},
+          {"factor": "Device Availability", "correlation": 0.76},
+          {"factor": "Motivation Level", "correlation": 0.82}
+        ],
+        "statistical_significance": 0.001,
+        "sample_size": 21340,
+        "confidence_interval": "95%"
+      },
+      "government_insights": {
+        "public_support": 84,
+        "policy_impact": "Very Positive",
+        "economic_effect": {
+          "skill_development": 67,
+          "employment_rate_improvement": 8.2,
+          "productivity_increase": 12.5
+        },
+        "regional_differences": {
+          "Urban": 88, "Suburban": 82, "Rural": 69
+        },
+        "priority_level": "High"
+      }
+    }
+  }
+}

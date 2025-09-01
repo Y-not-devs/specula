@@ -1,0 +1,100 @@
+{
+  "business_insights": {
+    "report_title": "Brand Reputation & Competitor Analysis",
+    "visualization_type": "stacked_bar_chart",
+    "data": [
+      {
+        "brand": "Brand A (Our Brand)",
+        "positive": 45,
+        "neutral": 35,
+        "negative": 20
+      },
+      {
+        "brand": "Competitor B",
+        "positive": 30,
+        "neutral": 40,
+        "negative": 30
+      },
+      {
+        "brand": "Competitor C",
+        "positive": 25,
+        "neutral": 50,
+        "negative": 25
+      }
+    ]
+  },
+  "media_insights": {
+    "report_title": "Emerging News Topics & Virality",
+    "visualization_type": "bubble_chart",
+    "data": [
+      {
+        "topic": "Political Scandal",
+        "messages": 550,
+        "reach": 250000,
+        "engagement_rate": 0.8
+      },
+      {
+        "topic": "Local Festival Announcement",
+        "messages": 210,
+        "reach": 80000,
+        "engagement_rate": 0.5
+      },
+      {
+        "topic": "Economic Forecast",
+        "messages": 410,
+        "reach": 180000,
+        "engagement_rate": 0.7
+      },
+      {
+        "topic": "Celebrity News",
+        "messages": 300,
+        "reach": 300000,
+        "engagement_rate": 0.9
+      }
+    ]
+  },
+  "researcher_insights": {
+    "report_title": "Long-term Discourse Evolution",
+    "visualization_type": "treemap",
+    "data": {
+      "name": "Discourse Topics",
+      "children": [
+        {
+          "name": "Social Issues",
+          "children": [
+            { "name": "Mental Health", "value": 700, "sentiment": "positive" },
+            { "name": "Income Inequality", "value": 500, "sentiment": "negative" }
+          ]
+        },
+        {
+          "name": "Environmentalism",
+          "children": [
+            { "name": "Climate Change", "value": 900, "sentiment": "neutral" },
+            { "name": "Renewable Energy", "value": 650, "sentiment": "positive" }
+          ]
+        },
+        {
+          "name": "Political Discourse",
+          "children": [
+            { "name": "Election 2025", "value": 1200, "sentiment": "negative" },
+            { "name": "New Regulations", "value": 400, "sentiment": "neutral" }
+          ]
+        }
+      ]
+    }
+  },
+  "government_insights": {
+    "report_title": "Public Feedback on New Legislation",
+    "visualization_type": "gauge_chart",
+    "data": {
+      "policy_A": {
+        "satisfaction_score": 75,
+        "details": "High satisfaction with local infrastructure spending."
+      },
+      "policy_B": {
+        "satisfaction_score": 40,
+        "details": "Low satisfaction due to tax rate increases."
+      }
+    }
+  }
+}
